@@ -1,2 +1,20 @@
 server:
   port: 8080
+partners:
+  version:
+  news:
+    - id: 1
+      name: bbc
+      url: http://feeds.bbci.co.uk/news/world/rss.xml
+      type: WORLD
+      enabled: true
+    - id: 2
+      name: cnn
+      url: http://rss.cnn.com/rss/edition_technology.rss
+      type: TECHNOLOGY
+      enabled: true
+    - id: 3
+      name: fox
+      url: https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU
+      type: SPORTS
+      enabled: true

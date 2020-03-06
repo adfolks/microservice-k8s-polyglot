@@ -4,18 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class News {
     Integer id;
-    String name;
+    String title;
     String desc;
+    String imageUrl;
+    String url;
+    Date pubDate;
 
     public enum newsType {
         SPORTS, WORLD, TECHNOLOGY
     }
 
-    Integer basePrice;
     newsType newsType;
 }
