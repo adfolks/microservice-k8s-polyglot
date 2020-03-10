@@ -54,7 +54,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
  <a name="documentation"></a>
 ## 2. Documentation
 
-![Documentation](/images/documentation.png)
 
 * Keep `README.md` updated as a project evolves.
 * Create specs for the API's that you create, OPENAPI,Swagger 
@@ -67,29 +66,27 @@ Having a good guideline for creating commits and sticking to it makes working wi
 <a name="environments"></a>
 ## 3. Environments
 
-![Environments](/images/laptop.png)
 
 * Define separate `development`, `test` and `production` environments if needed.
 * Load your deployment specific configurations from environment variables and never add them to the codebase as constants
 * Use Docker image if you can.
-## 5. Testing
+## 4. Testing
 * Have a `test` mode environment if needed.
 * Place your test files next to the tested modules using `*.test.js` or `*.spec.js` naming convention, like `moduleName.spec.js`.
 * Write testable code, avoid side effects, extract side effects, write pure functions
 * Use a static type checker 
 * Run tests locally before making any pull requests to `develop`.
 * Document your tests including instructions in the relevant section of your `README.md` file.
-## 8. Logging
+## 5. Logging
 
-![Logging](/images/logging.png)
 
 * Avoid client-side console logs in production
 * Produce readable production logging. Ideally use logging libraries to be used in production mode
 <a name="api"></a>
-## 9. API
+## 6. API
 <a name="api-design"></a>
 
-### 9.1 API design
+### 6.1 API design
 
 We try to enforce development of sanely constructed RESTful interfaces, which team members and clients can consume simply and consistently.  
  Lack of consistency and simplicity can massively increase integration and maintenance costs. Which is why `API design` is included in this document.
@@ -177,7 +174,7 @@ The **client app did something wrong** or The **API did something wrong**.
  
 
 <a name="api-documentation"></a>
-### 9.3 API documentation
+### 6.2 API documentation
 * Use API design tools, There are lots of open source tools for good documentation such as [Swagger](https://swagger.io/).
 
 
