@@ -15,7 +15,8 @@ public class FoxSports {
 
     public Object getResponse() {
         RestTemplate restTemplate=new RestTemplate();
-        restTemplate.ge
+//        restTemplate.
+        return null;
 
     }
 }
