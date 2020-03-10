@@ -15,4 +15,6 @@ log.info('Configuration loaded')
 def get_weather():
     querystring = {"id":str(configparse.get_city_id()),"appid":str(configparse.get_api_key())}
     response = requests.request("GET", URL, params=querystring)
-    return response.text
+    result = json.loads(response.text)
+    result['code'] = response.status_code
+    return result
