@@ -1,8 +1,9 @@
 package in.zycon.demo.news.partner;
 
+import in.zycon.demo.news.partner.model.fox.Rss;
 import in.zycon.demo.news.properties.NewsPartner;
-import in.zycon.demo.news.properties.Partners;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,10 +14,11 @@ public class FoxSports {
 
     NewsPartner newsPartner;
 
-    public Object getResponse() {
-        RestTemplate restTemplate=new RestTemplate();
-//        restTemplate.
-        return null;
-
+    public Rss getResponse() {
+        newsPartner = helper.getPartnerByName("fox");
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForEntity(newsPartner.getUrl(), Rss.class).getBody();
     }
+
+
 }

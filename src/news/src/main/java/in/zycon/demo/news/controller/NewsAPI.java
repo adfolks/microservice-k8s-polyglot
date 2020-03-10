@@ -1,5 +1,6 @@
 package in.zycon.demo.news.controller;
 
+import in.zycon.demo.news.partner.FoxSports;
 import in.zycon.demo.news.properties.Partners;
 import in.zycon.demo.news.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +16,21 @@ public class NewsAPI {
 
     @Autowired
     Partners partners;
+    @Autowired
+    FoxSports foxSports;
 
     @GetMapping(value = {"/news", "/news/{id}"})
+
     public ResponseEntity<?> getProduct(@PathVariable(required = false, name = "id") Integer id) {
         if (id != null) {
-            return ResponseEntity.ok(newsService.getProductById(id));
+            return ResponseEntity.ok(newsService.getNewsById(id));
         } else {
-            return ResponseEntity.ok(newsService.masterProducts());
+            return ResponseEntity.ok(newsService.getAllNews());
         }
     }
 
     @GetMapping("/test")
     public ResponseEntity<?> testing() {
-        return ResponseEntity.ok(partners.getNews().get(2).getUrl());
+        return ResponseEntity.ok(foxSports.getResponse());
     }
 }
