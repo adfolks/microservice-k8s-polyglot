@@ -1,0 +1,7 @@
+server:
+  port: 8090
+spring:
+  jackson:
+    deserialization:
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
