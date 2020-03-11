@@ -1,4 +1,4 @@
-package in.zycon.demo.news.partner.model.techrepublic;
+package in.zycon.demo.news.partner.model.bbc;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,5 +1,7 @@
 package in.zycon.demo.news.controller;
 
+import in.zycon.demo.news.partner.BBCWorld;
+import in.zycon.demo.news.partner.TechRepublic;
 import in.zycon.demo.news.partner.FoxSports;
 import in.zycon.demo.news.properties.Partners;
 import in.zycon.demo.news.service.NewsService;
@@ -14,10 +16,7 @@ public class NewsAPI {
     @Autowired
     NewsService newsService;
 
-    @Autowired
-    Partners partners;
-    @Autowired
-    FoxSports foxSports;
+
 
     @GetMapping(value = {"/news", "/news/{id}"})
 
@@ -27,10 +26,5 @@ public class NewsAPI {
         } else {
             return ResponseEntity.ok(newsService.getAllNews());
         }
-    }
-
-    @GetMapping("/test")
-    public ResponseEntity<?> testing() {
-        return ResponseEntity.ok(foxSports.getResponse());
     }
 }

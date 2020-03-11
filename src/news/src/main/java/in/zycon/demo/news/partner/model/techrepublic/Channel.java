@@ -1,8 +1,6 @@
-package in.zycon.demo.news.partner.model.cnn;
+package in.zycon.demo.news.partner.model.techrepublic;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlElement;

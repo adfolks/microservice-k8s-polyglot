@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class News {
@@ -15,7 +16,7 @@ public class News {
     String desc;
     String imageUrl;
     String url;
-    Date pubDate;
+    String pubDate;
 
     public enum newsType {
         SPORTS, WORLD, TECHNOLOGY

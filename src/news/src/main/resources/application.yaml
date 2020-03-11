@@ -9,8 +9,8 @@ partners:
       type: WORLD
       enabled: true
     - id: 2
-      name: cnn
-      url: http://rss.cnn.com/rss/edition_technology.rss
+      name: techrepublic
+      url: https://www.techrepublic.com/rssfeeds/articles/
       type: TECHNOLOGY
       enabled: true
     - id: 3
@@ -18,3 +18,8 @@ partners:
       url: https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU
       type: SPORTS
       enabled: true
+spring:
+  jackson:
+    deserialization:
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true

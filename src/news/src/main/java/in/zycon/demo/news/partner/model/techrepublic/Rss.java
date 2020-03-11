@@ -1,4 +1,4 @@
-package in.zycon.demo.news.partner.model.cnn;
+package in.zycon.demo.news.partner.model.techrepublic;
 
 import lombok.Data;
 

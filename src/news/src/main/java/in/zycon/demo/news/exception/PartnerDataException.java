@@ -1,8 +1,8 @@
 package in.zycon.demo.news.exception;
 
-public class NewsNotFound extends RuntimeException {
+public class PartnerDataException extends RuntimeException {
 
-    public NewsNotFound(String message) {
+    public PartnerDataException(String message) {
         super(message);
     }
 }
