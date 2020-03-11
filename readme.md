@@ -177,4 +177,3 @@ The **client app did something wrong** or The **API did something wrong**.
 ### 6.2 API documentation
 * Use API design tools, There are lots of open source tools for good documentation such as [Swagger](https://swagger.io/).
 
-
