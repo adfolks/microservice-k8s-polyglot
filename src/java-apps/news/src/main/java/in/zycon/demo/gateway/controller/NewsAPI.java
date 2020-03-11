@@ -1,7 +1,7 @@
 package in.zycon.demo.gateway.controller;
 
-import in.zycon.demo.gateway.model.News;
 import in.zycon.demo.gateway.service.NewsService;
+import in.zycon.demo.hawks.models.News;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
