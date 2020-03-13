@@ -72,7 +72,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
 * Use Docker image if you can.
 ## 4. Testing
 * Have a `test` mode environment if needed.
-* Place your test files next to the tested modules using `*.test.js` or `*.spec.js` naming convention, like `moduleName.spec.js`.
 * Write testable code, avoid side effects, extract side effects, write pure functions
 * Use a static type checker 
 * Run tests locally before making any pull requests to `develop`.
