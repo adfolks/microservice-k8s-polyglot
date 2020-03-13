@@ -5,3 +5,6 @@ spring:
     deserialization:
       ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
       ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
+news:
+  host: localhost:8080
+  path: /news
