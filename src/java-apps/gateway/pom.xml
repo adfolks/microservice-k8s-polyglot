@@ -11,7 +11,7 @@
     <artifactId>gateway</artifactId>
     <version>0.0.1</version>
     <name>gateway</name>
-    <description>Zuul Gateway</description>
+    <description>Gateway</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -73,6 +73,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>in.zycon.demo</groupId>
+            <artifactId>hawks</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
