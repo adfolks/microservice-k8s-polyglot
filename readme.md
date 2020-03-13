@@ -30,7 +30,7 @@
 
 ### 1.1 Some Git rules
 There are a set of rules to keep in mind:
-* Perform work in a feature/bugfix branch.
+* Perform work in a <feature/bugfix>/<app_name>/<branch-name> branch.
 * Branch out from `develop`
 * Never push into `develop` or `master` branch. Make a Pull Request.
 * Update your local `develop` branch and do an interactive rebase before pushing your feature and making a Pull Request.
