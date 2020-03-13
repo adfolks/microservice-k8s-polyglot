@@ -11,7 +11,7 @@
     <artifactId>gateway</artifactId>
     <version>0.0.1</version>
     <name>gateway</name>
-    <description>Zuul Gateway</description>
+    <description>Gateway</description>
 
     <properties>
         <java.version>1.8</java.version>

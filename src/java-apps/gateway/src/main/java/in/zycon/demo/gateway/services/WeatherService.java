@@ -1,31 +1,26 @@
 package in.zycon.demo.gateway.services;
 
-import in.zycon.demo.hawks.models.News;
+import in.zycon.demo.hawks.models.Weather;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
-public class NewsService {
-    @Value("${news.host}")
+public class WeatherService {
+    @Value("${weather.host}")
     String host;
-    @Value("${news.path}")
+    @Value("${weather.path}")
     String path;
 
-    public Set<News> getAllNews() {
+    public Weather getAllWeather(String id) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            return new HashSet<>(Arrays.asList(restTemplate.getForEntity(host + path, News[].class).getBody()));
+            return restTemplate.getForEntity(host + path + id, Weather.class).getBody();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
 
     }
-
-
 }
