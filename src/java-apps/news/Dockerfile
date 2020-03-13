@@ -1,3 +1,4 @@
+#Docker file for news service
 FROM java:8
 LABEL developer="Tibin Lukose"
 VOLUME /tmp
