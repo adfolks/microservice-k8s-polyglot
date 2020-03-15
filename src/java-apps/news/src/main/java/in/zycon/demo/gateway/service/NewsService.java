@@ -38,19 +38,20 @@ public class NewsService {
     public Set<News> getAllNews() {
         Set<News> allNews = new HashSet<News>();
 
-        try{
-            AtomicInteger atomicInteger=new AtomicInteger();
+        try {
+            AtomicInteger atomicInteger = new AtomicInteger();
             techRepublic.getResponse().getChannel().getItem().forEach(item -> {
 
-                allNews.add(new News(atomicInteger.getAndIncrement(),item.getTitle(),item.getDescription(),"NA",item.getLink(),item.getPubDate(),News.newsType.TECHNOLOGY));
+                allNews.add(new News(atomicInteger.getAndIncrement(), item.getTitle(), item.getDescription(), "NA", item.getLink(), item.getPubDate(), News.newsType.TECHNOLOGY));
             });
-            foxSports.getResponse().getChannel().getItem().forEach(item -> {
-                allNews.add(new News(atomicInteger.getAndIncrement(),item.getTitle(),item.getDescription(),"NA",item.getLink(),item.getPubDate(),News.newsType.SPORTS));
+            foxSports.getResponse().getChannel().
+                    getItem().forEach(item -> {
+                allNews.add(new News(atomicInteger.getAndIncrement(), item.getTitle(), item.getDescription(), item.getEnclosure() != null ? item.getEnclosure().getUrl() : "NA", item.getLink(), item.getPubDate(), News.newsType.SPORTS));
             });
             bbcWorld.getResponse().getChannel().getItem().forEach(item -> {
-                allNews.add(new News(atomicInteger.getAndIncrement(),item.getTitle(),item.getDescription(),"NA",item.getLink(),item.getPubDate(),News.newsType.WORLD));
+                allNews.add(new News(atomicInteger.getAndIncrement(), item.getTitle(), item.getDescription(), "NA", item.getLink(), item.getPubDate(), News.newsType.WORLD));
             });
-        }catch (PartnerDataException e){
+        } catch (PartnerDataException e) {
             e.printStackTrace();
         }
         return allNews;
