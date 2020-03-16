@@ -13,6 +13,6 @@ spec:
     targetPort: 5000
   selector:
     app: python-weather-app
-  type: NodePort
+  type: ClusterIP
 status:
   loadBalancer: {}
