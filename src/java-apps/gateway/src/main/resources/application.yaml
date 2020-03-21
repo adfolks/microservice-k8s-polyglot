@@ -1,12 +1,12 @@
 server:
-  port: 8090
+  port: 8080
 spring:
   jackson:
     deserialization:
       ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
       ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
 news:
-  host: http://localhost:8080
+  host: http://newsservice.demo-app.svc.cluster.local
   path: /news
 weather:
   host: http://192.168.1.219:5000

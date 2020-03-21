@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gatewayservice
-          image: tibinlukose/gateway-app
+          image: tibinlukose/gateway-app:v.1.0
           ports:
             - containerPort: 8080
 ---
@@ -24,11 +24,12 @@ metadata:
   name: gatewayservice
   namespace: demo-app
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: gatewayservice
   ports:
-    - port: 8080
-      name: gateway-port
-      targetPort: 8090
-
+    - name: gateway-port
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 31211

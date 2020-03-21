@@ -28,7 +28,6 @@ spec:
   selector:
     app: newsservice
   ports:
-    - port: 8080
-      name: news-port
+    - port: 80
       targetPort: 8080
-
+      name: news-port
