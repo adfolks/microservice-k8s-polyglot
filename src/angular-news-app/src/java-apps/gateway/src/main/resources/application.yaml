@@ -1,0 +1,16 @@
+server:
+  port: 8090
+spring:
+  jackson:
+    deserialization:
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
+news:
+  host: http://localhost:8080
+  path: /news
+weather:
+  host: http://192.168.1.219:5000
+  path: /get-weather?id=
+ads:
+    host: http://localhost:8081
+    path: /

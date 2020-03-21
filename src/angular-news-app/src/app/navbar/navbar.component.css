@@ -1,0 +1,19 @@
+:host {
+  border: 0 solid #e1e1e1;
+  border-bottom-width: 1px;
+  height: 49px;
+  padding: 0 16px;
+
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+a {
+  color: #199a82;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 49px;
+  margin-right: 27px;
+  text-decoration: none;
+}
