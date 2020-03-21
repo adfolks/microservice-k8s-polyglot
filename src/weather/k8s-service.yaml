@@ -3,16 +3,17 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: python-weather-app-svc
-  name: python-weather-app-svc
+    app: weather-app-svc
+  name: weather-app-svc
 spec:
   ports:
   - name: "weather-port"
-    port: 5000
+    port: 80
     protocol: TCP
     targetPort: 5000
+    nodePort: 31243
   selector:
-    app: python-weather-app
-  type: ClusterIP
+    app: weather-app
+  type: NodePort
 status:
   loadBalancer: {}

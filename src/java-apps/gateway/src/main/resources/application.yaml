@@ -9,7 +9,7 @@ news:
   host: http://newsservice.demo-app.svc.cluster.local
   path: /news
 weather:
-  host: http://192.168.1.219:5000
+  host: http://weather-app-svc.demo-app.svc.cluster.local
   path: /get-weather?id=
 ads:
     host: http://localhost:8081

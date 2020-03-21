@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gatewayservice
-          image: tibinlukose/gateway-app:v.1.0
+          image: tibinlukose/gateway-app:v.1.1
           ports:
             - containerPort: 8080
 ---
