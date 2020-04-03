@@ -1,0 +1,25 @@
+:host {
+  color: whitesmoke;
+  border-top: 0px solid #9154f3;
+  border-bottom-width: 1px;
+  padding: 0 17px;
+}
+
+/* Cursor */
+#typed-element {
+  color: #343a40;
+  text-decoration: underline;
+}
+
+h1 {
+  padding: 17.5px;
+}
+
+*{
+  background-color: #199a82;
+  margin-top: -19px;
+}
+
+header{
+  height:  70px;
+}
