@@ -26,6 +26,7 @@ import { WeatherTodayComponent } from './weather-today/weather-today.component';
 import { GeolocationService } from './geolocation.service';
 import { WeatherService } from './weather.service';
 import { AdsComponent } from './ads/ads.component';
+import { CarouselModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -43,12 +44,14 @@ import { AdsComponent } from './ads/ads.component';
     AdsComponent,
   ],
   imports: [
+   
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
+    CarouselModule.forRoot(),
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,

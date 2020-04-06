@@ -1,1 +1,13 @@
-<b>ads works!</b>
+<carousel>
+    <slide *ngFor="let ad of adData">
+        <!-- <div class="text-center py-5 bg-dark text-white" [style.backgroundImage]="'url('+ad.imagelink+')'"> -->
+        <div class="text-center py-5 bg-dark text-white">
+            <img [src]="ad.imagelink" />
+            <h2>{{ad.title}}</h2>
+            <div class="lead">
+                <h3>{{ad.description}}</h3>
+                <p>{{ad.content}}</p>
+            </div>
+        </div>
+    </slide>
+</carousel>
