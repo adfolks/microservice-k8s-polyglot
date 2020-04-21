@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
+import config from './../config.js';
 import { NewsModalComponent } from '../news-modal/news-modal.component';
 
 export interface Category {
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
   makeTheRequestAndGetData(formValue) {
     //   return this.httpClient.get(`https://newsapi.org/v2/top-headlines?category=${formValue}&
     //  language=en&country=us&sortBy=publishedAt&apiKey=${this.API_KEY}`).pipe(delay(3000)).subscribe((data) => {
-    return this.httpClient.get('http://10.148.1.166:31211/all?id=292223').subscribe((data) => {
+    return this.httpClient.get(config.url).subscribe((data) => {
       console.log(data)
       this.data = data['news'];
       this.adData = data['ads']
