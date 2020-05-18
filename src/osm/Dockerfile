@@ -9,13 +9,19 @@ COPY . /app
 
 WORKDIR /app
 
+ENV DB_NAME=osm
+ENV ALLOWED_HOSTS=*
+ENV DB_USER=gaussianapple@oms-db
+ENV DB_PASSWORD=zeaPX2XDTymB
+ENV DB_HOST=oms-db.mysql.database.azure.com
+
 RUN pip3 install shuup
-RUN pip install pymysql
+RUN pip3 install pymysql
 
-RUN python3 manage.py migrate
-RUN python3 manage.pyh shuup_init
+# RUN python3 manage.py migrate
+# RUN python3 manage.py shuup_init
 
-RUN echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@admin.com', 'admin')" | python3 -m manage.py shell
+# RUN echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@admin.com', 'admin')" | python3 -m manage.py shell
 
 EXPOSE 8000
-CMD python3 manage.py createsuperuser runserver 0.0.0.0:8000
+CMD python3 manage.py runserver 0.0.0.0:8000

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oms-app
+  namespace: demo-app
+spec:
+  selector:
+    matchLabels:
+      app: oms-app
+  template:
+    metadata:
+      labels:
+        app: oms-app
+    spec:
+      containers:
+        - name: oms-app
+          image: tibinlukose/oms:v.1.5
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oms-app-service
+  namespace: demo-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: oms-app
+  ports:
+    - name: oms-app-port
+      port: 80
+      protocol: TCP
+      targetPort: 8000
+  

@@ -5,7 +5,7 @@ from shuup.addons import add_enabled_addons
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = "Shhhhh"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "var", "media")
 STATIC_ROOT = os.path.join(BASE_DIR, "var", "static")
