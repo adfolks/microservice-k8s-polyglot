@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
-import config from './../config.js';
+import config from './../../config.js';
 import { NewsModalComponent } from '../news-modal/news-modal.component';
 
 export interface Category {

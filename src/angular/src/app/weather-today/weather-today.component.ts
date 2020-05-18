@@ -13,6 +13,7 @@ export class WeatherTodayComponent implements OnInit {
   weatherCondition: string;
   cityName: string;
   errorMessage: string;
+  icon:string;
   constructor(private _geolocationService: GeolocationService,
               private _weatherService: WeatherService
   ) { }
@@ -23,7 +24,8 @@ export class WeatherTodayComponent implements OnInit {
         this.latitude = result.coords.latitude;
         this.longitude = result.coords.longitude;
         this._weatherService.getTodayWeather(this.latitude, this.longitude).subscribe(weatherData => {
-         this.weatherCondition = weatherData.list[0].weather[0].main;
+         this.weatherCondition = weatherData.list[0].weather[0].description;
+         this.icon= "http://openweathermap.org/img/wn/"+weatherData.list[0].weather[0].icon+".png";
             this.cityName = weatherData.city.name;
         },
          error => this.errorMessage = error
