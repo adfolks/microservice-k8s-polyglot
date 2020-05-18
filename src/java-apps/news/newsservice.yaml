@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: newsservice
-          image: tibinlukose/news-app
+          env:
+            - name: PROFILE
+              value: prod
+          image: tibinlukose/news-app:v.1.0
           ports:
             - containerPort: 8080
 ---
