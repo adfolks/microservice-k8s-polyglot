@@ -24,3 +24,19 @@ spec:
           - containerPort: 5000
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: weather-app-svc
+  name: weather-app-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: weather-app-svc
+  ports:
+    - port: 80
+      targetPort: 5000
+      name: news-port
