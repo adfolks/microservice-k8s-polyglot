@@ -10,6 +10,7 @@ COPY . /app
 WORKDIR /app
 
 RUN pip3 install shuup
+RUN pip install pymysql
 
 RUN python3 manage.py migrate
 RUN python3 manage.pyh shuup_init
