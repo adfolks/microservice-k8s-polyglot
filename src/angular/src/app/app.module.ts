@@ -31,6 +31,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
   ],
   entryComponents: [NewsModalComponent],
-  providers: [GeolocationService, WeatherService, HttpClientModule],
+  providers: [GeolocationService, WeatherService, HttpClientModule,
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
