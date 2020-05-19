@@ -15,7 +15,7 @@ SHUUP_ENABLED_ADDONS_FILE = os.path.join(BASE_DIR, "var", "enabled_addons")
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'shuup_api.permissions.ShuupAPIPermission',
+        'rest_framework.permissions.AllowAny',
     )
 }
 
