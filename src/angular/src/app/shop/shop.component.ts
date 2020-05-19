@@ -3,18 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import config from './../../config.js';
 import { MatDialog } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
   showResultsDiv: boolean = false;
   data :any;
+  itemCount=0;
   adData = [];
   ghosts = [];
 
-  constructor(private httpClient: HttpClient, public dialog: MatDialog) { }
+  constructor(
+    private httpClient: HttpClient, public dialog: MatDialog) { }
 
   makeTheRequestAndGetData(formValue) {
     return this.httpClient.get(config.cartUrl).subscribe((data) => {
@@ -33,7 +36,10 @@ export class ShopComponent implements OnInit {
   }
 
   public addProductToCart(product:any): void {
-    // this.shoppingCartService.addItem(product, 1);
+    this.itemCount++;
+  }
+  emptyCart(){
+    this.itemCount=0;
   }
 
 }
