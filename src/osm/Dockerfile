@@ -18,8 +18,7 @@ ENV DB_HOST=oms-db.mysql.database.azure.com
 RUN pip3 install shuup
 RUN pip3 install pymysql
 
-# RUN python3 manage.py migrate
-# RUN python3 manage.py shuup_init
+RUN python3 manage.py shuup_init
 
 # RUN echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@admin.com', 'admin')" | python3 -m manage.py shell
 
