@@ -28,7 +28,7 @@ import { WeatherService } from './weather.service';
 import { AdsComponent } from './ads/ads.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { ShopComponent } from './shop/shop.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
 
 
 
@@ -46,7 +46,6 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     WeatherTodayComponent,
     AdsComponent,
     ShopComponent,
-    ShoppingCartComponent,
   ],
   imports: [
    
