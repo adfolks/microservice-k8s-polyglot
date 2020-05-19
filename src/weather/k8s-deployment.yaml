@@ -5,6 +5,7 @@ metadata:
   labels:
     app: weather-app
   name: weather-app
+  namespace: demo-app
 spec:
   replicas: 1
   selector:
@@ -32,6 +33,7 @@ metadata:
   labels:
     app: weather-app-svc
   name: weather-app-svc
+  namespace: demo-app
 spec:
   type: ClusterIP
   selector:
