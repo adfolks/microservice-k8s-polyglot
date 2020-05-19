@@ -19,6 +19,10 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  isChecout(){
+    alert("Checked out successfully")
+  }
+
   isCart(){
     this.isCheckout.emit(false);
   }
