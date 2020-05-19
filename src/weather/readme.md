@@ -15,3 +15,5 @@ Simple weather app api is the proxy api for the openweather api
 | Get          | /get-weather | 200      | id=city_id* |
 
 Get the city_id from the openweather documentation: http://bulk.openweathermap.org/sample/
+
+Dubai ID: 292223

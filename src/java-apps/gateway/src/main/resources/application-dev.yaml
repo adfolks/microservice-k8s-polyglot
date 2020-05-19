@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    deserialization:
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
+news:
+  host: http://localhost:8081
+  path: /news
+weather:
+  host: http://weather-app-svc.demo-app.svc.cluster.local
+  path: /get-weather?id=
+ads:
+    host: http://ad-app-svc.demo-app.svc.cluster.local
+    path: /

@@ -3,24 +3,40 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: python-weather-app
-  name: python-weather-app
+    app: weather-app
+  name: weather-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: python-weather-app
+      app: weather-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: python-weather-app
+        app: weather-app
     spec:
       containers:
-      - image: python-weather-app
-        name: python-weather-app
+      - image: tibinlukose/weather:v.1.0
+        name: weather-app
         ports:
           - containerPort: 5000
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: weather-app-svc
+  name: weather-app-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: weather-app-svc
+  ports:
+    - port: 80
+      targetPort: 5000
+      name: news-port
