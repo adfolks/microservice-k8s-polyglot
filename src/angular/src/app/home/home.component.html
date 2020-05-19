@@ -12,17 +12,12 @@
       Search</button>
     <!-- </div> -->
   </div>
-  <!-- <div class="row">
-    <div class="col-md-12"> -->
-     
-    <!-- </div>
-  </div> -->
 </div>
 <div *ngIf="showResultsDiv">
   <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
 </div>
 <div class="container" *ngIf="!showResultsDiv">
-  <mat-card *ngFor="let article of data" class="card">
+  <div *ngFor="let article of data" class="card">
     <div *ngIf='article.imageUrl=="NA"; else notShow '>
       <img src="../../assets/images/nophoto_thumbnail.png" />
     </div>
@@ -36,6 +31,6 @@
       <p>{{ article.desc }}</p>
       <button mat-raised-button color="primary" (click)="openDialog(article)">Read story</button>
     </div>
-  </mat-card>
+  </div>
 </div>
 
