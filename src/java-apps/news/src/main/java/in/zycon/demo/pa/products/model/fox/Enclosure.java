@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.products.model.fox;
+package in.zycon.demo.pa.products.model.fox;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.AllArgsConstructor;

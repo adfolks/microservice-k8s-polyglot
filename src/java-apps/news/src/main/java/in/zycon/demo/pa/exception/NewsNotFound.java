@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.exception;
+package in.zycon.demo.pa.exception;
 
 public class NewsNotFound extends RuntimeException {
 

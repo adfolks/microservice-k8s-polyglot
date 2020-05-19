@@ -1,10 +1,10 @@
-package in.zycon.demo.gateway.service;
+package in.zycon.demo.pa.service;
 
-import in.zycon.demo.gateway.exception.NewsNotFound;
-import in.zycon.demo.gateway.exception.PartnerDataException;
-import in.zycon.demo.gateway.products.BBCWorld;
-import in.zycon.demo.gateway.products.FoxSports;
-import in.zycon.demo.gateway.products.TechRepublic;
+import in.zycon.demo.pa.exception.NewsNotFound;
+import in.zycon.demo.pa.exception.PartnerDataException;
+import in.zycon.demo.pa.products.BBCWorld;
+import in.zycon.demo.pa.products.FoxSports;
+import in.zycon.demo.pa.products.TechRepublic;
 import in.zycon.demo.hawks.models.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

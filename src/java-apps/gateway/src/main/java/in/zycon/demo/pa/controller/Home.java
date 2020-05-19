@@ -1,8 +1,8 @@
-package in.zycon.demo.gateway.controller;
+package in.zycon.demo.pa.controller;
 
-import in.zycon.demo.gateway.services.AdService;
-import in.zycon.demo.gateway.services.NewsService;
-import in.zycon.demo.gateway.services.WeatherService;
+import in.zycon.demo.pa.services.AdService;
+import in.zycon.demo.pa.services.NewsService;
+import in.zycon.demo.pa.services.WeatherService;
 import in.zycon.demo.hawks.constants.Errors;
 import in.zycon.demo.hawks.models.Gateway;
 import in.zycon.demo.hawks.models.Weather;

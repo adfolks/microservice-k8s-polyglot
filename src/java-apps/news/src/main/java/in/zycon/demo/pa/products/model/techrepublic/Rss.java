@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.products.model.techrepublic;
+package in.zycon.demo.pa.products.model.techrepublic;
 
 import lombok.Data;
 

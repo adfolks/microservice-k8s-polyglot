@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.services;
+package in.zycon.demo.pa.services;
 
 import in.zycon.demo.hawks.models.Weather;
 import org.springframework.beans.factory.annotation.Value;

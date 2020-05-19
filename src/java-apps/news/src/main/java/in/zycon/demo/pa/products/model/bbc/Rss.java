@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.products.model.bbc;
+package in.zycon.demo.pa.products.model.bbc;
 
 import lombok.Data;
 

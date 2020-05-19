@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.properties;
+package in.zycon.demo.pa.properties;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;

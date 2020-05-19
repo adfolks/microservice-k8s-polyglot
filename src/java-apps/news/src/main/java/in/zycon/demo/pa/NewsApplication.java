@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway;
+package in.zycon.demo.pa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

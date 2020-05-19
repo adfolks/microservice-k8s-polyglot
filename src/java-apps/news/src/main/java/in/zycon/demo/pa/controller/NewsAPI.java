@@ -1,6 +1,6 @@
-package in.zycon.demo.gateway.controller;
+package in.zycon.demo.pa.controller;
 
-import in.zycon.demo.gateway.service.NewsService;
+import in.zycon.demo.pa.service.NewsService;
 import in.zycon.demo.hawks.models.News;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
 
 @RestController
 public class NewsAPI {

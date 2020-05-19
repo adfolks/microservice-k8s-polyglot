@@ -1,7 +1,7 @@
-package in.zycon.demo.gateway.products;
+package in.zycon.demo.pa.products;
 
-import in.zycon.demo.gateway.products.model.techrepublic.Rss;
-import in.zycon.demo.gateway.properties.NewsPartner;
+import in.zycon.demo.pa.products.model.techrepublic.Rss;
+import in.zycon.demo.pa.properties.NewsPartner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

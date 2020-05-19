@@ -1,4 +1,4 @@
-package in.zycon.demo.gateway.controller;
+package in.zycon.demo.pa.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
