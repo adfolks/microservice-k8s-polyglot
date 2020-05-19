@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="row" *ngIf="!showCheckout">
+=======
+<div class="row">
+>>>>>>> a58bb40f0d0f0e1e63d3b68f867d47a57989dcde
     <div class="col-md-8">
         <div *ngIf="showResultsDiv">
             <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
@@ -22,12 +26,17 @@
                             <h3>{{ article.name }}</h3>
                             <p>{{ article.description }}</p>
                             <button type="button"
+<<<<<<< HEAD
                             class="btn btn-success"
                             (click)="addProductToCart(article)">Add To Cart</button>
                             <button type="button"
                             class="btn btn-warning"
                             *ngIf="productInCart(article)"
                             (click)="removeProductFromCart(article)">Remove item from cart</button>
+=======
+                            class="button success large js-btn-add"
+                            (click)="addProductToCart(article)">Add To Cart</button>
+>>>>>>> a58bb40f0d0f0e1e63d3b68f867d47a57989dcde
                         </div>
 
                       </div>
@@ -81,6 +90,9 @@
           
     </div>
 </div>
+<<<<<<< HEAD
 
 <!-- <app-checkout [adData]="checkoutItems"></app-checkout> -->
 <app-checkout (isCheckout)="countChangedHandler($event)" [checkData]="checkoutData" *ngIf="showCheckout"></app-checkout>
+=======
+>>>>>>> a58bb40f0d0f0e1e63d3b68f867d47a57989dcde

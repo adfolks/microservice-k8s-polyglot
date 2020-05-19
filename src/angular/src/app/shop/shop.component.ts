@@ -4,7 +4,6 @@ import config from './../../config.js';
 import { MatDialog } from '@angular/material/dialog';
 
 
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
