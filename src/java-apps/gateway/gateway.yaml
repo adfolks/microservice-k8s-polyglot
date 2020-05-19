@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: gatewayservice
-          image: tibinlukose/gateway-app:v.1.2
+          env:
+            - name: PROFILE
+              value: prod
+          image: tibinlukose/gateway-app:v.1.6
           ports:
             - containerPort: 8080
 ---
@@ -24,7 +27,7 @@ metadata:
   name: gatewayservice
   namespace: demo-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: gatewayservice
   ports:
@@ -32,4 +35,3 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 8080
-      nodePort: 31211

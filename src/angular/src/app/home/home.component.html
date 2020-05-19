@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <app-ads [adData]="adData"></app-ads>
+    <mat-form-field class="formfield">
+      <mat-select placeholder="Select" [(value)]="selected">
+        <mat-option *ngFor="let category of categories" [value]="category.value">
+          {{category.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <div class="center"> -->
+    <button mat-raised-button type="submit" (click)="searchButtonClicked(selected)">
+      Search</button>
+    <!-- </div> -->
+  </div>
+</div>
+<div *ngIf="showResultsDiv">
+  <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
+</div>
+<div class="container" *ngIf="!showResultsDiv">
+  <div *ngFor="let article of data" class="card">
+    <div *ngIf='article.imageUrl=="NA"; else notShow '>
+      <img src="../../assets/images/nophoto_thumbnail.png" />
+    </div>
+
+    <ng-template #notShow>
+      <img src="{{ article.imageUrl }}" />
+    </ng-template>
+
+    <div class="card-body">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.desc }}</p>
+      <button mat-raised-button color="primary" (click)="openDialog(article)">Read story</button>
+    </div>
+  </div>
+</div>
+

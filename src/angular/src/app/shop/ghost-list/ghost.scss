@@ -1,0 +1,54 @@
+@import '../../utils/animations/ghost-animation.scss';
+
+
+.user {
+  overflow: hidden;
+  border: solid 2px blue;
+
+  .avatar {
+    width: 250px;
+    height: 210px;
+    background-color: white;
+    border: solid 2px rgb(212, 212, 212);
+    max-width: 100%;
+    overflow: hidden;
+    @include animate-ghost-avatar;
+
+  }
+
+  .lines {
+    margin-block-end: var(--ghost-row-gap);
+    width: calc(100% - var(--avatar-gap));
+
+    h2,
+    h3,
+    p {
+      background-color: gray;
+      border-bottom: 3px solid white;
+      border-radius: 4px 4px 4px 4px;
+      @include background-gradient;
+      @include animate-ghost-line;
+    }
+
+    h2 {
+      width: 50%;
+    }
+
+    h3 {
+      height: 20px;
+      width: 85%;
+    }
+
+    p {
+      height: 17px;
+      width: 70%;
+    }
+
+
+  }
+
+  &:not(:first-child),
+  &:not(:second-child) {
+    // margin-top: -5px;
+  }
+}

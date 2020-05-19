@@ -1,0 +1,21 @@
+<div class="row">
+
+    <div class="col-10" *ngIf="weatherCondition else other_content">
+        <div class="card-body">
+            <b>{{cityName}} Weather</b><br>
+            {{weatherCondition}} <img [src]=icon/>  
+            <!-- <p class="card-text">Today's Weather Condition in {{cityName}} is  {{weatherCondition}} <img [src]=icon/> 
+            </p> -->
+
+        </div>
+    </div>
+    <ng-template #other_content>Loading Weather... </ng-template>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage | json}}
+       
+    </div>
+    <div class="col-2 flot-right">
+        <app-time></app-time>
+    </div>
+   
+</div>
