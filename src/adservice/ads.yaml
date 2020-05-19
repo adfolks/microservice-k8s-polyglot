@@ -19,7 +19,7 @@ spec:
         app: ads-app
     spec:
       containers:
-      - image: tibinlukose/weather:v.1.0
+      - image: tibinlukose/ads-app:v.1.0
         name: ads-app
         ports:
           - containerPort: 5000
