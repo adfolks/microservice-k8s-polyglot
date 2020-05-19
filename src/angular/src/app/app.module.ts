@@ -27,6 +27,9 @@ import { GeolocationService } from './geolocation.service';
 import { WeatherService } from './weather.service';
 import { AdsComponent } from './ads/ads.component';
 import { CarouselModule } from 'ngx-bootstrap';
+import { ShopComponent } from './shop/shop.component';
+
+
 
 
 @NgModule({
@@ -42,6 +45,7 @@ import { CarouselModule } from 'ngx-bootstrap';
     TimeComponent,
     WeatherTodayComponent,
     AdsComponent,
+    ShopComponent,
   ],
   imports: [
    
@@ -60,7 +64,9 @@ import { CarouselModule } from 'ngx-bootstrap';
 
   ],
   entryComponents: [NewsModalComponent],
-  providers: [GeolocationService, WeatherService, HttpClientModule],
+  providers: [GeolocationService, WeatherService, HttpClientModule,
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

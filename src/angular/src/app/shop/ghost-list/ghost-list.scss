@@ -1,0 +1,12 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  grid-gap: 15px;
+
+  top: 40px;
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 10px;
+
+  -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)))
+}
