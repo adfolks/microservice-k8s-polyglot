@@ -1,3 +1,11 @@
 /* *{
     padding-left: 15px;
 } */
+
+.image{
+    height: 250px;
+    width: 60%;
+}
+.ee{
+    background-color: grey;
+}

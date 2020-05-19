@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="!showCheckout">
     <div class="col-md-8">
         <div *ngIf="showResultsDiv">
             <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
@@ -22,8 +22,12 @@
                             <h3>{{ article.name }}</h3>
                             <p>{{ article.description }}</p>
                             <button type="button"
-                            class="button success large js-btn-add"
+                            class="btn btn-success"
                             (click)="addProductToCart(article)">Add To Cart</button>
+                            <button type="button"
+                            class="btn btn-warning"
+                            *ngIf="productInCart(article)"
+                            (click)="removeProductFromCart(article)">Remove item from cart</button>
                         </div>
 
                       </div>
@@ -54,9 +58,9 @@
           <br/>
           <div class="row px-3">
             <div class="small-12 columns">
-              <a class="success button large expanded"
+              <a class="btn btn-info"
                  [attr.disabled]="itemCount === 0 ? true : null"
-                 routerLink="/checkout">Proceed To Checkout</a>
+                 (click)="openDialog()">Proceed To Checkout</a>
             </div>
           </div>
           <div class="row px-3">
@@ -67,7 +71,7 @@
           <div class="row px-3">
             <div class="small-12 columns">
               <button type="button"
-                      class="secondary button small expanded js-btn-empty-cart"
+                      class="btn button-danger"
                       (click)="emptyCart()"
                       [attr.disabled]="itemCount === 0 ? true : null">
                 Empty shopping basket
@@ -77,3 +81,6 @@
           
     </div>
 </div>
+
+<!-- <app-checkout [adData]="checkoutItems"></app-checkout> -->
+<app-checkout (isCheckout)="countChangedHandler($event)" [checkData]="checkoutData" *ngIf="showCheckout"></app-checkout>
