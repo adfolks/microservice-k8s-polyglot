@@ -14,3 +14,6 @@ weather:
 ads:
     host: http://ad-app-svc.demo-app.svc.cluster.local
     path: /
+pa:
+  host: http://localhost:8081
+  path: /product-availability

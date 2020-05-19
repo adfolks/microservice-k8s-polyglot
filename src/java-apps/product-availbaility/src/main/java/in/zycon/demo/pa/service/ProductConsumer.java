@@ -3,11 +3,9 @@ package in.zycon.demo.pa.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.zycon.demo.pa.products.Product;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 

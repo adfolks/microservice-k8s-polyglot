@@ -2,6 +2,7 @@ package in.zycon.demo.pa.controller;
 
 import in.zycon.demo.pa.services.AdService;
 import in.zycon.demo.pa.services.NewsService;
+import in.zycon.demo.pa.services.ProductStatus;
 import in.zycon.demo.pa.services.WeatherService;
 import in.zycon.demo.hawks.constants.Errors;
 import in.zycon.demo.hawks.models.Gateway;
@@ -12,17 +13,25 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/")
-public class    Home {
+public class Home {
     @Autowired
     NewsService newsService;
     @Autowired
     WeatherService weatherService;
     @Autowired
     AdService adService;
+    @Autowired
+    ProductStatus productStatus;
 
     @GetMapping("/news")
     public ResponseEntity<?> getAllNews() {
         return ResponseEntity.ok(newsService.getAllNews());
+
+    }
+
+    @GetMapping("/pa/{id}")
+    public ResponseEntity<?> getProductStatus(@PathVariable Integer id) {
+        return ResponseEntity.ok(productStatus.getProductStatus(id));
 
     }
 
@@ -31,6 +40,7 @@ public class    Home {
         return ResponseEntity.ok(adService.getAllAds());
 
     }
+
     @GetMapping("/test")
     public ResponseEntity<?> test() {
         return ResponseEntity.ok("test");
