@@ -1,12 +1,16 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
+  margin-left:35px !important;
+  margin-right:25px !important;
+  margin-bottom: 5px;
 }
 
 .container>.card img {
   max-width: 100%;
   height: 250px;
+  /* width:300px; */
 }
 
 .container>.card:hover {
@@ -20,3 +24,10 @@
 .center {
   padding: 20px;
 }
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 1570px !important;
+}
+}
+

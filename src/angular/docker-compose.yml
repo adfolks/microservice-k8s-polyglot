@@ -1,0 +1,10 @@
+version: '1.0'
+
+services:
+  angular:
+    hostname: localhost
+    container_name: angular-news-app
+    build: .
+    ports:
+      - 80:80
+        
