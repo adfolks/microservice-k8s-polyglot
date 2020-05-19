@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ads-app
+  name: ads-app
+  namespace: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ads-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ads-app
+    spec:
+      containers:
+      - image: tibinlukose/weather:v.1.0
+        name: ads-app
+        ports:
+          - containerPort: 5000
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: weather-app-svc
+  name: weather-app-svc
+  namespace: demo-app
+spec:
+  type: ClusterIP
+  selector:
+    app: weather-app-svc
+  ports:
+    - port: 80
+      targetPort: 5000
+      name: news-port
