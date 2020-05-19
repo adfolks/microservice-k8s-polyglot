@@ -8,13 +8,11 @@ import in.zycon.demo.hawks.models.Gateway;
 import in.zycon.demo.hawks.models.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-
-public class Home {
+@RequestMapping("/v1/")
+public class    Home {
     @Autowired
     NewsService newsService;
     @Autowired
@@ -31,6 +29,11 @@ public class Home {
     @GetMapping("/ads")
     public ResponseEntity<?> getAllAds() {
         return ResponseEntity.ok(adService.getAllAds());
+
+    }
+    @GetMapping("/test")
+    public ResponseEntity<?> test() {
+        return ResponseEntity.ok("test");
 
     }
 
