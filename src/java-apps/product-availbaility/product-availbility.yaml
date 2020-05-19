@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-avail
+  namespace: demo-app
+spec:
+  selector:
+    matchLabels:
+      app: prod-avail
+  template:
+    metadata:
+      labels:
+        app: prod-avail
+    spec:
+      containers:
+        - name: prod-avail
+          env:
+            - name: KEY
+              value:
+          image: tibinlukose/product-availability:v.1.2
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-avail
+  namespace: demo-app
+spec:
+  type: ClusterIP
+  selector:
+    app: prod-avail
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: prod-avail-port

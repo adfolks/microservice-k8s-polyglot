@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  kafka:
+    bootstrap-servers: ecom-data.servicebus.windows.net:9093
+    client-id: product-availbility-1
+    properties:
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://ecom-data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=${KEY}"
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_SSL
+    consumer:
+      group-id: product-availbility
+      properties:
+        spring.json:
+          use.type.headers: false
+          value.default.type: in.zycon.demo.pa.products.Product
+topic:
+  name: ecom-sku-stock
