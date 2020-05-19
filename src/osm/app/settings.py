@@ -13,6 +13,13 @@ MEDIA_URL = "/media/"
 
 SHUUP_ENABLED_ADDONS_FILE = os.path.join(BASE_DIR, "var", "enabled_addons")
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'shuup_api.permissions.ShuupAPIPermission',
+    )
+}
+
+
 INSTALLED_APPS = add_enabled_addons(SHUUP_ENABLED_ADDONS_FILE, [
     # django
     'django.contrib.admin',
@@ -57,6 +64,10 @@ INSTALLED_APPS = add_enabled_addons(SHUUP_ENABLED_ADDONS_FILE, [
     'shuup.tasks',
     'shuup.discounts',
 
+    # External Shuup addons
+    'shuup_api',
+    'shuup_rest_api',
+
     # external apps
     'bootstrap3',
     'django_countries',
@@ -65,6 +76,8 @@ INSTALLED_APPS = add_enabled_addons(SHUUP_ENABLED_ADDONS_FILE, [
     'filer',
     'reversion',
     'registration',
+    'rest_framework',
+    'rest_framework_swagger'
 ])
 
 MIDDLEWARE_CLASSES = [
@@ -97,10 +110,10 @@ WSGI_APPLICATION = 'shuup_workbench.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("DB_NAME"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST"),
+        'NAME': 'osm',
+        'USER': 'gaussianapple@oms-db',
+        'PASSWORD': 'zeaPX2XDTymB',
+        'HOST': 'oms-db.mysql.database.azure.com',
         'PORT': '3306',
     }
 }
