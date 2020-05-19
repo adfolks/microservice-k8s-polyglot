@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-8">
+        <div *ngIf="showResultsDiv">
+            <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
+        </div>
+        <div class="row" *ngIf="!showResultsDiv">
+            <div *ngFor="let article of data" class="card col-6">
+              <!-- <div class="col-5"> -->
+                  <div class="row  pt-3">
+                      <div class="col-4">
+                        <div *ngIf='article.categories[0].image=="NA"; else notShow '>
+                            <img src="../../assets/images/nophoto_thumbnail.png" />
+                          </div>
+                      
+                          <ng-template #notShow>
+                            <img src="{{article.image}}" style="width: 100px;height: 100;"/>
+                          </ng-template>
+
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                            <h3>{{ article.name }}</h3>
+                            <p>{{ article.description }}</p>
+                            <button type="button"
+                            class="button success large js-btn-add"
+                            (click)="addProductToCart(article, 1)">Add To Cart</button>
+                        </div>
+
+                      </div>
+                  <!-- </div> -->
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    
+        <app-shopping-cart></app-shopping-cart>
+    </div>
+</div>
