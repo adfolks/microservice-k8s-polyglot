@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-WORKDIR .
+WORKDIR /app
 COPY . .
 RUN apt-get update
 RUN apt install python3-pip --assume-yes

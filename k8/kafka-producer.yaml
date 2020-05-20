@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-producer
+spec:
+  selector:
+    matchLabels:
+      app: kafka-producer
+  template:
+    metadata:
+      labels:
+        app: kafka-producer
+    spec:
+      containers:
+      - name: kafka-producer
+        image: nihilbabu/poly-producer:v.1.0
+        env:
+          - name: EVENTHUB_CONNECTION
+            value: 'Endpoint=sb://ecom-data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oAWGjDDWndiaM99k15rZwCOIDI8Wqf0RvIlK7Zed4cI='
+        volumeMounts:
+          - name: cert-vol
+            mountPath: /usr/lib/ssl/certs
+      volumes:
+        - name: cert-vol
+          configMap:
+              name: kafka-cert
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-cert
+data:
+  ca-certificates.crt: |
+        
