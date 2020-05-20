@@ -15,7 +15,7 @@ if __name__ == '__main__':
     conf = {
         'bootstrap.servers': 'ecom-data.servicebus.windows.net:9093', #replace
         'security.protocol': 'SASL_SSL',
-        'ssl.ca.location': '/usr/lib/ssl/certs/ca-cert.crt',
+        'ssl.ca.location': '/usr/lib/ssl/certs/ca-certificates.crt',
         'sasl.mechanism': 'PLAIN',
         'sasl.username': '$ConnectionString',
         'sasl.password': key,          #replace
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     while True:
         try:
             data = {}
-            data['product_id'] = random.randint(1,4)
+            data['product_id'] = random.randint(1,15)
             data['product_quantity'] = random.randint(1,100)
             data = json.dumps(data)
             p.produce(topic, data)

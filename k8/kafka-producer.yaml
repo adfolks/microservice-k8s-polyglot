@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: kafka-producer
-          image: nihilbabu/poly-producer:v.1.0
+          image: hassanraha/event-producer:v0.2
           env:
             - name: EVENTHUB_CONNECTION
               value: "Endpoint=sb://ecom-data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oAWGjDDWndiaM99k15rZwCOIDI8Wqf0RvIlK7Zed4cI="
