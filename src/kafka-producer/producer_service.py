@@ -15,7 +15,7 @@ if __name__ == '__main__':
     conf = {
         'bootstrap.servers': 'ecom-data.servicebus.windows.net:9093', #replace
         'security.protocol': 'SASL_SSL',
-        'ssl.ca.location': '/usr/lib/ssl/certs/ca-certificates.crt',
+        'ssl.ca.location': '/usr/lib/ssl/certs/ca-cert.crt',
         'sasl.mechanism': 'PLAIN',
         'sasl.username': '$ConnectionString',
         'sasl.password': key,          #replace
