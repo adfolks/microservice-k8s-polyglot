@@ -3,8 +3,8 @@
         <div *ngIf="showResultsDiv">
             <ghost-list [ghosts]="ghosts" fxLayout="row wrap"></ghost-list>
         </div>
-        <div class="row" *ngIf="!showResultsDiv">
-            <div *ngFor="let article of data" class="card col-6">
+        <div class="row all" *ngIf="!showResultsDiv">
+            <div *ngFor="let article of data" class="card col-5">
               <!-- <div class="col-5"> -->
                   <div class="row  pt-3">
                       <div class="col-3">
@@ -13,7 +13,7 @@
                           </div>
                       
                           <ng-template #notShow>
-                            <img src="{{article.image}}" style="width: 100px;height: 100;"/>
+                            <img src="{{article.image}}" style="width: 100px;height: 110;"/>
                           </ng-template>
 
                       </div>
@@ -23,28 +23,32 @@
                             <p>{{ article.description }}</p>
 
                           </div>  
-                            <div class="row">
-                              <button type="button"
-                              class="btn btn-success"
-                              (click)="addProductToCart(article)">Add To Cart</button>&nbsp;
-                              <button type="button"
-                              class="btn btn-info"
-                            
-                              (click)="checkAvailabilty(article.id)">Check Availability</button>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 pl-5 pb-2">
 
-                            </div>
-                            <div class="row">
-                              &nbsp;<br>
-                              <button type="button"
-                              class="btn btn-warning"
-                              *ngIf="productInCart(article)"
-                              (click)="removeProductFromCart(article)">Remove item from cart</button>
-                             
-                            </div>
-                          
-                          
+                          <button type="button"
+                          class="btn btn-success"
+                          (click)="addProductToCart(article)">Add To Cart</button>&nbsp;
+                          <button type="button"
+                          class="btn btn-info"
                         
+                          (click)="checkAvailabilty(article.id)">Check Availability</button>
 
+                        </div>
+                      
+
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 pl-5 pb-2">
+                          <button type="button"
+                          class="btn btn-warning"
+                          *ngIf="productInCart(article)"
+                          (click)="removeProductFromCart(article)">Remove item from cart</button>
+
+                        </div>
+
+                       
                       </div>
                   <!-- </div> -->
               </div>

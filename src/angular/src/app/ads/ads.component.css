@@ -3,9 +3,9 @@
 } */
 
 .image{
-    height: 200px;
-    width: 60%;
+    /* height: 100%; */
+    width: 100%;
 }
 .ee{
-    background-color: grey;
+    /* background-color: grey; */
 }
