@@ -14,6 +14,6 @@ weather:
 ads:
     host: http://ad-app-svc.demo-app.svc.cluster.local
     path: /
-pa:
+ps:
   host: http://prod-avail.demo-app.svc.cluster.local
   path: /product-availability
