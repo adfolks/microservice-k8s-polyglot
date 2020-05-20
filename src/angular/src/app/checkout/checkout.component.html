@@ -1,0 +1,42 @@
+  
+<div class="row mx-5 mt-3">
+    <h2>
+        <i class="material-icons">shopping_basket</i>&nbsp;
+        <span>Checkout</span>
+      </h2>
+      <hr>
+
+</div>
+
+<div *ngFor="let article of checkData" >
+    <div class="row mx-5 hi">
+        <div class="col-md-3">
+            <img src={{article.image}}>
+        </div>
+        <div class="col-md-4">
+            <h4>{{article.name}}</h4>
+            {{article.description}}
+        </div>
+        <div class="col-md-2">
+            <h4>Quantity</h4>
+            {{article.occurence}}
+        </div>
+        <div class="col-md-3">
+            <br>
+           <button class="btn btn-warning">Remove</button>
+        </div>
+    </div>
+</div>    
+
+<div class="row mx-5 mt-3">
+    <div class="col-md-10"></div>
+    <div class="col-md-1">
+        <button class="btn btn-danger" (click)="isCart()">cancel</button>
+       
+
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-success" (click)="isChecout()">checkout</button>
+    </div>
+</div>
+
