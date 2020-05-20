@@ -12,5 +12,5 @@ weather:
   host: http://weather-app-svc.demo-app.svc.cluster.local
   path: /get-weather?id=
 ads:
-    host: http://ad-app-svc.demo-app.svc.cluster.local
-    path: /
+    host: http://localhost:8081
+    path: /product-availability

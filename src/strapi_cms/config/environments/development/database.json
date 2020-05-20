@@ -1,0 +1,20 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "mongoose",
+      "settings": {
+        "database": "alFuttaimDemo2",
+        "host": "alfuttaimdemo.mongo.cosmos.azure.com",
+        "srv": false,
+        "port": "10255",
+        "username": "alfuttaimdemo",
+        "password": "ClmMRpDeufVASgR4dlRBlsZcni24Nv2tedZkHu7WJB1WkuYcQHmtH9djryOSwxdgX9U15AFon1FXUMjrBD9zHA=="
+      },
+      "options": {
+        "authenticationDatabase": "",
+        "ssl": true
+      }
+    }
+  }
+}
