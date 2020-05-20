@@ -65,6 +65,10 @@ export class ShopComponent implements OnInit {
 
   }
 
+  checkAvailabilty(id){
+    alert("10 pieces")
+  }
+
 
   openDialog() {
     this.showCheckout=true;
