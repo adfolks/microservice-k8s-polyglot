@@ -1,24 +1,29 @@
 package in.zycon.demo.gateway.controller;
 
-import in.zycon.demo.gateway.services.AdService;
-import in.zycon.demo.gateway.services.NewsService;
-import in.zycon.demo.gateway.services.WeatherService;
+import in.zycon.demo.gateway.services.*;
 import in.zycon.demo.hawks.constants.Errors;
 import in.zycon.demo.hawks.models.Gateway;
 import in.zycon.demo.hawks.models.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/")
-public class    Home {
+public class Home {
     @Autowired
     NewsService newsService;
     @Autowired
     WeatherService weatherService;
     @Autowired
     AdService adService;
+
+    @Autowired
+    ProdAvail prodAvail;
+    @Autowired
+    ProductsOMS productsOMS;
 
     @GetMapping("/news")
     public ResponseEntity<?> getAllNews() {
@@ -31,6 +36,7 @@ public class    Home {
         return ResponseEntity.ok(adService.getAllAds());
 
     }
+
     @GetMapping("/test")
     public ResponseEntity<?> test() {
         return ResponseEntity.ok("test");
@@ -44,6 +50,20 @@ public class    Home {
             return ResponseEntity.badRequest().body(Errors.PARTNER_FAILED);
         }
         return ResponseEntity.ok(weatherService.getAllWeather(id));
+
+    }
+
+    @GetMapping("/status")
+    public ResponseEntity<?> getStatus(@RequestParam("id") String id) {
+
+
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(prodAvail.getProductStatus(id));
+
+    }
+    @GetMapping("/products")
+    public ResponseEntity<?> getProducts() {
+
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(productsOMS.getProducts());
 
     }
 

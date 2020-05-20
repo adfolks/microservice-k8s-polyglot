@@ -12,5 +12,10 @@ weather:
   host: http://weather-app-svc.demo-app.svc.cluster.local
   path: /get-weather?id=
 ads:
-    host: http://localhost:8081
-    path: /product-availability
+  host: http://ad-app-svc.demo-app.svc.cluster.local
+  path: /
+ps:
+  host: http://localhost:8081
+  path: /product-availability/
+oms:
+  product: http://20.191.56.90/api/shuup/front/products/

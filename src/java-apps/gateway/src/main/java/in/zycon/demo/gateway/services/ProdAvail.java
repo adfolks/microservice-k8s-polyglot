@@ -14,10 +14,13 @@ public class ProdAvail {
     @Value("${ps.path}")
     String path;
 
-    public ProductQuantityStatus getProductStatus(String id) {
+    public String getProductStatus(String id) {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            return restTemplate.getForEntity(host + path + id, ProductQuantityStatus.class).getBody();
+            System.out.println(restTemplate.getForEntity(host + path + id, ProductQuantityStatus.class).getBody());
+            System.out.println(host+path+id);
+            return restTemplate.getForEntity(host + path + id, String.class).getBody();
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;
