@@ -31,13 +31,13 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: weather-app-svc
-  name: weather-app-svc
+    app: ads-app-svc
+  name: ads-app-svc
   namespace: demo-app
 spec:
   type: ClusterIP
   selector:
-    app: weather-app-svc
+    app: ads-app
   ports:
     - port: 80
       targetPort: 5000
