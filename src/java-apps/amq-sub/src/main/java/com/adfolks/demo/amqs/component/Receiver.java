@@ -1,6 +1,5 @@
-package com.adfolks.ms.demo.component;
+package com.adfolks.demo.amqs.component;
 
-import com.adfolks.ms.demo.dto.Email;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 

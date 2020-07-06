@@ -1,4 +1,4 @@
-package com.adfolks.ms.demo.dto;
+package com.adfolks.demo.amqs.dto;
 
 
 import lombok.Getter;
