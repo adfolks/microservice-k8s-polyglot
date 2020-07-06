@@ -16,8 +16,8 @@ spec:
         - name: prod-avail
           env:
             - name: KEY
-              value:
-          image: tibinlukose/product-availability:v.1.2
+              value: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://ecom-data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oAWGjDDWndiaM99k15rZwCOIDI8Wqf0RvIlK7Zed4cI=";
+          image: tibinlukose/product-availability:v.1.3
           ports:
             - containerPort: 8080
 ---
