@@ -14,10 +14,7 @@ spec:
     spec:
       containers:
         - name: front-end
-          env:
-            - name: PROFILE
-              value: prod
-          image: tibinlukose/front-end:v.1.0
+          image: tibinlukose/front-end:v.2.7
           ports:
             - containerPort: 80
 ---
