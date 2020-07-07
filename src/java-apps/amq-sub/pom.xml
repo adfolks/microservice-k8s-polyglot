@@ -36,6 +36,12 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>in.zycon.demo</groupId>
+			<artifactId>hawks</artifactId>
+			<version>0.0.1</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

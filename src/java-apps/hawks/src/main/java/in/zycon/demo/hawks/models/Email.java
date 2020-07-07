@@ -1,4 +1,4 @@
-package com.adfolks.demo.amqs.dto;
+package in.zycon.demo.hawks.models;
 
 
 import lombok.Getter;

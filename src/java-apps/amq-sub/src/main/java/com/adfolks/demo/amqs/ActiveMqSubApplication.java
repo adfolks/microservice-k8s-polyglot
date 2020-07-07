@@ -7,9 +7,9 @@ import org.springframework.jms.annotation.EnableJms;
 
 @SpringBootApplication
 @EnableJms
-public class DemoApplication {
+public class ActiveMqSubApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ActiveMqSubApplication.class, args);
 	}
 
 }
