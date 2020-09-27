@@ -63,7 +63,7 @@ metadata:
   name: oms-app-service
   namespace: demo-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: oms-app
   ports:

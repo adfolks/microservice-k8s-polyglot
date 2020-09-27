@@ -31,26 +31,6 @@ spec:
           image: strapi/strapi
           ports:
             - containerPort: 1337
-          env:
-            - name: DATABASE_CLIENT
-              value: mongo
-            - name: DATABASE_NAME
-              value: alFuttaimDemo2
-            - name: DATABASE_HOST
-              value: alfuttaimdemo.mongo.cosmos.azure.com
-            - name: DATABASE_PORT
-              value: "10255"
-            - name: DATABASE_USERNAME
-              value: alfuttaimdemo
-            - name: DATABASE_PASSWORD
-              value: ClmMRpDeufVASgR4dlRBlsZcni24Nv2tedZkHu7WJB1WkuYcQHmtH9djryOSwxdgX9U15AFon1FXUMjrBD9zHA==
-            - name: DATABASE_SSL 
-              value: "true"
-            - name: HOST 
-              value: "51.104.154.30"
-            - name: PORT 
-              value: "80"
-
           volumeMounts:
             - mountPath: "/srv/app"
               name: strapi
@@ -71,55 +51,7 @@ metadata:
 spec:
   selector:
     app: strapi
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: 1337
-
----
-# apiVersion: v1
-# kind: ConfigMap
-# metadata:
-#   name: strapi-server
-# data:
-#   server.json: |
-#     {
-#       "host": "localhost",
-#       "port": 1337,
-#       "autoReload": {
-#         "enabled": true
-#       },
-#       "cron": {
-#         "enabled": false
-#       },
-#       "admin": {
-#         "path": "/dashboard"
-#       }
-#     }
-# ---
-# apiVersion: v1
-# kind: ConfigMap
-# metadata:
-#   name: strapi-database
-# data:
-#   database.json: |
-#     {
-#       "defaultConnection": "default",
-#       "connections": {
-#         "default": {
-#           "connector": "mongoose",
-#           "settings": {
-#             "database": "alFuttaimDemo2",
-#             "host": "alfuttaimdemo.mongo.cosmos.azure.com",
-#             "srv": false,
-#             "port": "10255",
-#             "username": "alfuttaimdemo",
-#             "password": "ClmMRpDeufVASgR4dlRBlsZcni24Nv2tedZkHu7WJB1WkuYcQHmtH9djryOSwxdgX9U15AFon1FXUMjrBD9zHA=="
-#           },
-#           "options": {
-#             "authenticationDatabase": "",
-#             "ssl": true
-#           }
-#         }
-#       }
-#     }
