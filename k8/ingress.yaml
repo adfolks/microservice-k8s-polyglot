@@ -15,7 +15,7 @@ spec:
       - backend:
           serviceName: gatewayservice
           servicePort: 80
-        path: /v1(/|$)(.*)
+        path: /api/(.*)
       - backend:
           serviceName: front-end
           servicePort: 80
