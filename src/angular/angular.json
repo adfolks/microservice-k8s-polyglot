@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "angular-html-demo-news"
+  "defaultProject": "angular-html-demo-news",
+  "cli": {
+    "analytics": "65f8b51e-6e48-4493-86f1-b47325b83c62"
+  }
 }
