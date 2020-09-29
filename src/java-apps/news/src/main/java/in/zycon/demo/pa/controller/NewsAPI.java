@@ -1,5 +1,6 @@
 package in.zycon.demo.pa.controller;
 
+import com.microsoft.applicationinsights.TelemetryClient;
 import in.zycon.demo.pa.service.NewsService;
 import in.zycon.demo.hawks.models.News;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +17,9 @@ public class NewsAPI {
     @Autowired
     NewsService newsService;
 
+    @Autowired
+    TelemetryClient telemetryClient;
+
 
     @GetMapping(value = {"/news", "/news/{id}"})
     @ApiOperation(value = "Get All News", response = News.class)
@@ -23,6 +27,7 @@ public class NewsAPI {
             @ApiResponse(code = 200, message = "News Fetched successfully")
     })
     public ResponseEntity<?> getProduct(@PathVariable(required = false, name = "id") Integer id) {
+        telemetryClient.trackEvent("news-service event");
         if (id != null) {
             return ResponseEntity.ok(newsService.getNewsById(id));
         } else {
