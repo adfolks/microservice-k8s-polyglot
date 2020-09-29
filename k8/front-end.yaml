@@ -17,7 +17,7 @@ spec:
           env:
             - name: PROFILE
               value: prod
-          image: tibinlukose/front-end:v.1.0
+          image: tibinlukose/front-end:v.1.5
           ports:
             - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
   name: front-end
   namespace: demo-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: front-end
   ports:

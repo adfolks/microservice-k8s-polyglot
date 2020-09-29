@@ -1,7 +1,5 @@
 package in.zycon.demo.pa.controller;
 
-//import io.swagger.annotations.ApiResponse;
-//import io.swagger.annotations.ApiResponses;
 
 import in.zycon.demo.pa.service.ProductConsumer;
 import org.springframework.beans.factory.annotation.Autowired;

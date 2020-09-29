@@ -20,7 +20,7 @@ export class AdsComponent implements OnInit {
      
       this.adData = data;
       for(var i=0;i<this.adData.length;i++){
-        var image="http://35.173.254.49:1337"+this.adData[i].image[0].url
+        var image="http://aks-demo.liwanetworks.com:1337"+this.adData[i].image[0].url
         this.adData[i].image[0].url=image;
         // this.ads.push(
             // {

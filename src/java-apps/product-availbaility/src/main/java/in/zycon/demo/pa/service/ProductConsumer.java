@@ -17,6 +17,7 @@ public class ProductConsumer {
     public void receive(String test) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         HashMap<String, Integer> map = (HashMap<String, Integer>) objectMapper.readValue(test, Map.class);
+        System.out.println(map);
         dataStore.put(map.get("product_id"),map.get("product_quantity"));
     }
 

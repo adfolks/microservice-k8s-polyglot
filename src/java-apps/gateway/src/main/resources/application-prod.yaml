@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  application:
+    name: gateway
   jackson:
     deserialization:
       ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
@@ -12,8 +14,13 @@ weather:
   host: http://weather-app-svc.demo-app.svc.cluster.local
   path: /get-weather?id=
 ads:
-    host: http://ad-app-svc.demo-app.svc.cluster.local
-    path: /
+  host: http://ad-app-svc.demo-app.svc.cluster.local
+  path: /
 ps:
   host: http://prod-avail.demo-app.svc.cluster.local
-  path: /product-availability
+  path: /product-availability/
+oms:
+  product: http://20.191.56.90/api/shuup/front/products/
+azure:
+  application-insights:
+    instrumentation-key: 906f566b-cd86-413f-821b-da5e24adbca2

@@ -23,3 +23,8 @@ spring:
     deserialization:
       ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT : true
       ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
+  application:
+    name: news-service
+azure:
+  application-insights:
+    instrumentation-key: 906f566b-cd86-413f-821b-da5e24adbca2

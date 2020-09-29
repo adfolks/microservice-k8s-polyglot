@@ -1,0 +1,40 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: microservice-k-s-polyglot
+build:
+  artifacts:
+  - image: gcr.io/kubernetes-e2e-test-images/dnsutils
+    context: src/adservice
+  - image: strapi/strapi
+    context: src/angular
+  - image: tibinlukose/ads-app
+    context: src/java-apps/gateway
+  - image: tibinlukose/front-end
+    context: src/java-apps/news
+  - image: tibinlukose/gateway-app
+    context: src/java-apps/product-availbaility
+  - image: tibinlukose/news-app
+    context: src/kafka-producer
+  - image: tibinlukose/oms
+    context: src/oms
+  - image: tibinlukose/product-availability
+    context: src/strapi_cms/Docker
+    docker:
+      dockerfile: dockerfile
+  - image: tibinlukose/weather
+    context: src/weather
+deploy:
+  kubectl:
+    manifests:
+    - k8/ads.yaml
+    - k8/dnsUpstream.yaml
+    - k8/dnsutils.yaml
+    - k8/front-end.yaml
+    - k8/gateway.yaml
+    - k8/newsservice.yaml
+    - k8/oms.yaml
+    - k8/strapi.yaml
+    - k8/weather.yaml
+    - src/java-apps/gateway/gateway.yaml
+    - src/java-apps/product-availbaility/product-availbility.yaml

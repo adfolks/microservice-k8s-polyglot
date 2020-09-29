@@ -37,7 +37,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: weather-app-svc
+    app: weather-app
   ports:
     - port: 80
       targetPort: 5000

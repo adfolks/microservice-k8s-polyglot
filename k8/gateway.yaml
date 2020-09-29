@@ -18,6 +18,7 @@ spec:
             - name: PROFILE
               value: prod
           image: tibinlukose/gateway-app:v.1.6
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
@@ -27,7 +28,7 @@ metadata:
   name: gatewayservice
   namespace: demo-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: gatewayservice
   ports:
