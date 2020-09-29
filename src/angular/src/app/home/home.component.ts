@@ -4,6 +4,7 @@ import { delay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import config from './../../config.js';
 import { NewsModalComponent } from '../news-modal/news-modal.component';
+import { MyMonitoringServiceService } from '../my-monitoring-service.service.js';
 
 export interface Category {
   value: string;
@@ -30,11 +31,12 @@ export class HomeComponent implements OnInit {
   private API_KEY = "47f7a1ea42de4ac0a95e5c606fd56904";
   showResultsDiv: boolean = false;
   data = [];
+  selected:any;
   adData = [];
   ghosts = [];
   public passTheURL: any;
 
-  constructor(private httpClient: HttpClient, public dialog: MatDialog) { }
+  constructor(private httpClient: HttpClient, public dialog: MatDialog,private myMonitoringService: MyMonitoringServiceService) { }
 
   makeTheRequestAndGetData(formValue) {
     //   return this.httpClient.get(`https://newsapi.org/v2/top-headlines?category=${formValue}&
@@ -48,7 +50,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  searchButtonClicked(formValue) {
+  searchButtonClicked(formValue :any) {
     this.ghosts = new Array(30);
     this.showResultsDiv = true;
     this.makeTheRequestAndGetData(formValue);
