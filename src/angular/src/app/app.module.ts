@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,7 @@ import { AdsComponent } from './ads/ads.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { ShopComponent } from './shop/shop.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ErrorHandlerService } from './error-handler-service.service';
 
 
 
@@ -68,6 +69,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   entryComponents: [NewsModalComponent],
   providers: [GeolocationService, WeatherService, HttpClientModule,
+    { provide: ErrorHandler, useClass: ErrorHandlerService },
 
 ],
   bootstrap: [AppComponent]
